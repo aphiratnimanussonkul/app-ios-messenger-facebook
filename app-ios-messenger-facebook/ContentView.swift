@@ -6,6 +6,9 @@ class FriendsController: UICollectionViewController, UICollectionViewDelegateFlo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.title = "Recent"
+        
         collectionView?.backgroundColor = UIColor.white
         collectionView?.alwaysBounceVertical = true
         collectionView?.register(FriendCell.self, forCellWithReuseIdentifier: cellId)

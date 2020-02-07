@@ -30,6 +30,8 @@ class FriendCell: BaseCell {
     let profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
+        imageView.layer.cornerRadius = 34
+        imageView.layer.masksToBounds = true
         return imageView
     }()
     

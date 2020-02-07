@@ -25,7 +25,15 @@ class FriendsController: UICollectionViewController, UICollectionViewDelegateFlo
     
 }
 
-class FriendCell: UICollectionViewCell {
+class FriendCell: BaseCell {
+    
+    override func setupView() {
+        backgroundColor = UIColor.blue
+    }
+    
+}
+
+class BaseCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -27,8 +27,21 @@ class FriendsController: UICollectionViewController, UICollectionViewDelegateFlo
 
 class FriendCell: BaseCell {
     
+    let profileImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        return imageView
+    }()
+    
     override func setupView() {
         backgroundColor = UIColor.blue
+        
+        addSubview(profileImageView)
+        profileImageView.image = UIImage(named: "aphirat_profile")
+        profileImageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "H:|[v0]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": profileImageView]))
+        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v0]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": profileImageView]))
     }
     
 }

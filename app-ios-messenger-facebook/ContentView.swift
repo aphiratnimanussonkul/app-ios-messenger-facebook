@@ -48,15 +48,30 @@ class FriendCell: BaseCell {
         
         addSubview(profileImageView)
         profileImageView.image = UIImage(named: "aphirat_profile")
-        profileImageView.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "H:|-12-[v0(68)]", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": profileImageView]))
-        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "V:|-12-[v0(68)]", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": profileImageView]))
+        addConstraintWithFormat(format: "H:|-12-[v0(68)]", views: profileImageView)
+        addConstraintWithFormat(format: "V:|-12-[v0(68)]", views: profileImageView)
         
         addSubview(dividerLineView)
-        dividerLineView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "H:|-82-[v0]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": dividerLineView]))
-        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "V:[v0(1)]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": dividerLineView]))
+        addConstraintWithFormat(format: "H:|-82-[v0]|", views: dividerLineView)
+        addConstraintWithFormat(format: "V:[v0(1)]|", views: dividerLineView)
+        
+    }
+    
+}
+
+extension UIView {
+    
+    func addConstraintWithFormat(format: String, views: UIView...) {
+        
+        var viewDictionary = [String: UIView]()
+        for (index, view) in views.enumerated() {
+            let key = "v\(index)"
+            viewDictionary[key] = view
+            view.translatesAutoresizingMaskIntoConstraints = false
+        }
+        
+        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: format, options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: viewDictionary))
+        
     }
     
 }

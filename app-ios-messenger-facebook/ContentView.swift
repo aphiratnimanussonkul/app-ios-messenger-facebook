@@ -47,6 +47,7 @@ class FriendCell: BaseCell {
     let nameLabel: UILabel = {
         let label = UILabel()
         label.text = "Friend Name"
+        label.font = UIFont.systemFont(ofSize: 18)
         return label
     }()
     
@@ -54,6 +55,7 @@ class FriendCell: BaseCell {
         let label = UILabel()
         label.text = "Your Friend Message and somethings"
         label.textColor = UIColor.gray
+        label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
@@ -76,7 +78,6 @@ class FriendCell: BaseCell {
     private func setupContainerView() {
         
         let containerView = UIView()
-        containerView.backgroundColor = UIColor.red
         addSubview(containerView)
         
         addConstraintWithFormat(format: "H:|-90-[v0]|", views: containerView)

@@ -15,6 +15,7 @@
 		6B06F88523ED95FC00F5B17E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B06F88323ED95FC00F5B17E /* LaunchScreen.storyboard */; };
 		6B06F89023ED95FC00F5B17E /* app_ios_messenger_facebookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B06F88F23ED95FC00F5B17E /* app_ios_messenger_facebookTests.swift */; };
 		6B06F89B23ED95FC00F5B17E /* app_ios_messenger_facebookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B06F89A23ED95FC00F5B17E /* app_ios_messenger_facebookUITests.swift */; };
+		6B06F8A923F160C300F5B17E /* FriendsControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B06F8A823F160C300F5B17E /* FriendsControllerHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		6B06F89623ED95FC00F5B17E /* app-ios-messenger-facebookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "app-ios-messenger-facebookUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B06F89A23ED95FC00F5B17E /* app_ios_messenger_facebookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = app_ios_messenger_facebookUITests.swift; sourceTree = "<group>"; };
 		6B06F89C23ED95FC00F5B17E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B06F8A823F160C300F5B17E /* FriendsControllerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsControllerHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				6B06F88323ED95FC00F5B17E /* LaunchScreen.storyboard */,
 				6B06F88623ED95FC00F5B17E /* Info.plist */,
 				6B06F88023ED95FC00F5B17E /* Preview Content */,
+				6B06F8A823F160C300F5B17E /* FriendsControllerHelper.swift */,
 			);
 			path = "app-ios-messenger-facebook";
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				6B06F87923ED95FB00F5B17E /* AppDelegate.swift in Sources */,
 				6B06F87B23ED95FB00F5B17E /* SceneDelegate.swift in Sources */,
 				6B06F87D23ED95FB00F5B17E /* ContentView.swift in Sources */,
+				6B06F8A923F160C300F5B17E /* FriendsControllerHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

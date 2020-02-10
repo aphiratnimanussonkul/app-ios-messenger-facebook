@@ -68,6 +68,14 @@ class FriendCell: BaseCell {
         return timeLabel
     }()
     
+    let hasReadImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.layer.cornerRadius = 10
+        imageView.layer.masksToBounds = true
+        return imageView
+    }()
+    
     override func setupView() {
         
         addSubview(profileImageView)
@@ -80,6 +88,7 @@ class FriendCell: BaseCell {
         addConstraintWithFormat(format: "H:|-82-[v0]|", views: dividerLineView)
         addConstraintWithFormat(format: "V:[v0(1)]|", views: dividerLineView)
         
+        hasReadImageView.image = UIImage(named: "aphirat_profile")
         setupContainerView()
         
     }
@@ -96,11 +105,13 @@ class FriendCell: BaseCell {
         containerView.addSubview(nameLabel)
         containerView.addSubview(messageLabel)
         containerView.addSubview(timeLabel)
+        containerView.addSubview(hasReadImageView)
         
         containerView.addConstraintWithFormat(format: "H:|[v0][v1(80)]-12-|", views: nameLabel, timeLabel)
         containerView.addConstraintWithFormat(format: "V:|[v0][v1(24)]|", views: nameLabel, messageLabel)
-        containerView.addConstraintWithFormat(format: "H:|[v0]-12-|", views: messageLabel)
+        containerView.addConstraintWithFormat(format: "H:|[v0]-8-[v1(20)]-12-|", views: messageLabel, hasReadImageView)
         containerView.addConstraintWithFormat(format: "V:|[v0(20)]", views: timeLabel)
+        containerView.addConstraintWithFormat(format: "V:[v0(20)]|", views: hasReadImageView)
         
     }
     

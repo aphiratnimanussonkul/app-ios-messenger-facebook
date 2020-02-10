@@ -49,7 +49,8 @@ class FriendCell: BaseCell {
         addSubview(profileImageView)
         profileImageView.image = UIImage(named: "aphirat_profile")
         addConstraintWithFormat(format: "H:|-12-[v0(68)]", views: profileImageView)
-        addConstraintWithFormat(format: "V:|-12-[v0(68)]", views: profileImageView)
+        addConstraintWithFormat(format: "V:[v0(68)]", views: profileImageView)
+        addConstraint(NSLayoutConstraint(item: profileImageView, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0))
         
         addSubview(dividerLineView)
         addConstraintWithFormat(format: "H:|-82-[v0]|", views: dividerLineView)

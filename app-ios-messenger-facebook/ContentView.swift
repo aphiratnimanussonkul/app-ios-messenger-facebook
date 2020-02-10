@@ -59,6 +59,15 @@ class FriendCell: BaseCell {
         return label
     }()
     
+    let timeLabel: UILabel = {
+        let timeLabel = UILabel()
+        timeLabel.text = "12.00 pm"
+        timeLabel.font = UIFont.systemFont(ofSize: 15)
+        timeLabel.textColor = UIColor.gray
+        timeLabel.textAlignment = .right
+        return timeLabel
+    }()
+    
     override func setupView() {
         
         addSubview(profileImageView)
@@ -81,14 +90,17 @@ class FriendCell: BaseCell {
         addSubview(containerView)
         
         addConstraintWithFormat(format: "H:|-90-[v0]|", views: containerView)
-        addConstraintWithFormat(format: "V:[v0(60)]", views: containerView)
+        addConstraintWithFormat(format: "V:[v0(50)]", views: containerView)
         addConstraint(NSLayoutConstraint(item: containerView, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0))
     
         containerView.addSubview(nameLabel)
         containerView.addSubview(messageLabel)
-        containerView.addConstraintWithFormat(format: "H:|[v0]|", views: nameLabel)
+        containerView.addSubview(timeLabel)
+        
+        containerView.addConstraintWithFormat(format: "H:|[v0][v1(80)]-12-|", views: nameLabel, timeLabel)
         containerView.addConstraintWithFormat(format: "V:|[v0][v1(24)]|", views: nameLabel, messageLabel)
-        containerView.addConstraintWithFormat(format: "H:|[v0]|", views: messageLabel)
+        containerView.addConstraintWithFormat(format: "H:|[v0]-12-|", views: messageLabel)
+        containerView.addConstraintWithFormat(format: "V:|[v0(20)]", views: timeLabel)
         
     }
     

@@ -56,6 +56,20 @@ class FriendCell: BaseCell {
         addConstraintWithFormat(format: "H:|-82-[v0]|", views: dividerLineView)
         addConstraintWithFormat(format: "V:[v0(1)]|", views: dividerLineView)
         
+        setupContainerView()
+        
+    }
+    
+    private func setupContainerView() {
+        
+        let containerView = UIView()
+        containerView.backgroundColor = UIColor.red
+        addSubview(containerView)
+        
+        addConstraintWithFormat(format: "H:|-90-[v0]|", views: containerView)
+        addConstraintWithFormat(format: "V:[v0(60)]", views: containerView)
+        addConstraint(NSLayoutConstraint(item: containerView, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0))
+    
     }
     
 }

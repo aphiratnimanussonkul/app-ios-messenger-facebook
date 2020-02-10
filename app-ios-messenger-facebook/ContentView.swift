@@ -1,39 +1,9 @@
 import SwiftUI
 
-class Friend: NSObject {
-    
-    var name: String?
-    var profileImageName: String?
-    
-}
-
-class Message: NSObject {
-    
-    var text: String?
-    var date: NSDate?
-    var friend: Friend?
-    
-}
-
 class FriendsController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     private let cellId = "cellId"
     var messages: [Message]?
-    
-    func setupData() {
-        
-        let aphirat = Friend()
-        aphirat.name = "Aphirat Nimanussonkul"
-        aphirat.profileImageName = "aphirat_profile"
-        
-        let message = Message()
-        message.text = "Hello IOS"
-        message.date = NSDate()
-        message.friend = aphirat
-        
-        messages = [message]
-    
-    }
     
     override func viewDidLoad() {
         
@@ -77,6 +47,7 @@ class MessageCell: BaseCell {
             nameLabel.text = message?.friend?.name
             if let imageProfile = message?.friend?.profileImageName {
                 profileImageView.image = UIImage(named: imageProfile)
+                hasReadImageView.image = UIImage(named: imageProfile)
             }
             messageLabel.text = message?.text
             if let dateMessage = message?.date {
@@ -136,7 +107,6 @@ class MessageCell: BaseCell {
     override func setupView() {
         
         addSubview(profileImageView)
-        profileImageView.image = UIImage(named: "aphirat_profile")
         addConstraintWithFormat(format: "H:|-12-[v0(68)]", views: profileImageView)
         addConstraintWithFormat(format: "V:[v0(68)]", views: profileImageView)
         addConstraint(NSLayoutConstraint(item: profileImageView, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0))
@@ -145,7 +115,6 @@ class MessageCell: BaseCell {
         addConstraintWithFormat(format: "H:|-82-[v0]|", views: dividerLineView)
         addConstraintWithFormat(format: "V:[v0(1)]|", views: dividerLineView)
         
-        hasReadImageView.image = UIImage(named: "aphirat_profile")
         setupContainerView()
         
     }

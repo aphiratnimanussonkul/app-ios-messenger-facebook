@@ -50,6 +50,13 @@ class FriendCell: BaseCell {
         return label
     }()
     
+    let messageLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Your Friend Message and somethings"
+        label.textColor = UIColor.gray
+        return label
+    }()
+    
     override func setupView() {
         
         addSubview(profileImageView)
@@ -77,8 +84,11 @@ class FriendCell: BaseCell {
         addConstraint(NSLayoutConstraint(item: containerView, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0))
     
         containerView.addSubview(nameLabel)
+        containerView.addSubview(messageLabel)
         containerView.addConstraintWithFormat(format: "H:|[v0]|", views: nameLabel)
-        containerView.addConstraintWithFormat(format: "V:|[v0]|", views: nameLabel)
+        containerView.addConstraintWithFormat(format: "V:|[v0][v1(24)]|", views: nameLabel, messageLabel)
+        containerView.addConstraintWithFormat(format: "H:|[v0]|", views: messageLabel)
+        
     }
     
 }

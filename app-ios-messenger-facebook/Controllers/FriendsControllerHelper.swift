@@ -69,22 +69,28 @@ extension FriendsController {
     }
     
     func clearData() {
+        
         let delegate = UIApplication.shared.delegate as? AppDelegate
         if let context = delegate?.persistentContainer.viewContext {
+            
             do {
-                let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Message")
-                messages = try context.fetch(fetchRequest) as? [Message]
-                
-                for message in messages! {
-                    context.delete(message)
+                let entities = ["Friend", "Message"]
+                for entity in entities {
+                    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
+                    let objects = try context.fetch(fetchRequest) as? [NSManagedObject]
+            
+                    for object in objects! {
+                        context.delete(object)
+                    }
                 }
                 
                 try context.save()
-
             } catch {
                 print(error)
             }
+            
         }
+        
     }
     
 }

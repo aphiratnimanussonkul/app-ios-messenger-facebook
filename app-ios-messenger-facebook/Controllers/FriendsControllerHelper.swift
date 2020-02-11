@@ -5,6 +5,8 @@ extension FriendsController {
     
     func setupData() {
         
+        clearData()
+        
         let delegate = UIApplication.shared.delegate as? AppDelegate
         if let context = delegate?.persistentContainer.viewContext {
             
@@ -60,6 +62,25 @@ extension FriendsController {
             
             do {
                 messages = try context.fetch(fetchRequest) as? [Message]
+            } catch {
+                print(error)
+            }
+        }
+    }
+    
+    func clearData() {
+        let delegate = UIApplication.shared.delegate as? AppDelegate
+        if let context = delegate?.persistentContainer.viewContext {
+            do {
+                let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Message")
+                messages = try context.fetch(fetchRequest) as? [Message]
+                
+                for message in messages! {
+                    context.delete(message)
+                }
+                
+                try context.save()
+
             } catch {
                 print(error)
             }

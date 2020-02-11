@@ -113,17 +113,12 @@
 			children = (
 				6B06F87823ED95FB00F5B17E /* AppDelegate.swift */,
 				6B06F87A23ED95FB00F5B17E /* SceneDelegate.swift */,
-				6B06F87C23ED95FB00F5B17E /* ContentView.swift */,
+				6B06F92523F24B3100F5B17E /* Controllers */,
+				6B06F92423F24AF200F5B17E /* Models */,
 				6B06F87E23ED95FC00F5B17E /* Assets.xcassets */,
 				6B06F88323ED95FC00F5B17E /* LaunchScreen.storyboard */,
 				6B06F88623ED95FC00F5B17E /* Info.plist */,
 				6B06F88023ED95FC00F5B17E /* Preview Content */,
-				6B06F8A823F160C300F5B17E /* FriendsControllerHelper.swift */,
-				6B06F8D723F1A0E500F5B17E /* messageModel.xcdatamodeld */,
-				6B06F91C23F1B2DC00F5B17E /* Message+CoreDataClass.swift */,
-				6B06F91D23F1B2DC00F5B17E /* Message+CoreDataProperties.swift */,
-				6B06F91E23F1B2DC00F5B17E /* Friend+CoreDataClass.swift */,
-				6B06F91F23F1B2DC00F5B17E /* Friend+CoreDataProperties.swift */,
 			);
 			path = "app-ios-messenger-facebook";
 			sourceTree = "<group>";
@@ -152,6 +147,27 @@
 				6B06F89C23ED95FC00F5B17E /* Info.plist */,
 			);
 			path = "app-ios-messenger-facebookUITests";
+			sourceTree = "<group>";
+		};
+		6B06F92423F24AF200F5B17E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6B06F8D723F1A0E500F5B17E /* messageModel.xcdatamodeld */,
+				6B06F91C23F1B2DC00F5B17E /* Message+CoreDataClass.swift */,
+				6B06F91D23F1B2DC00F5B17E /* Message+CoreDataProperties.swift */,
+				6B06F91E23F1B2DC00F5B17E /* Friend+CoreDataClass.swift */,
+				6B06F91F23F1B2DC00F5B17E /* Friend+CoreDataProperties.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6B06F92523F24B3100F5B17E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6B06F87C23ED95FB00F5B17E /* ContentView.swift */,
+				6B06F8A823F160C300F5B17E /* FriendsControllerHelper.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

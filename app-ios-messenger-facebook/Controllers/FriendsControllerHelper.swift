@@ -43,8 +43,27 @@ extension FriendsController {
             messageNattamon.text = "good morning son"
             messageNattamon.date = NSDate() as Date
             messageNattamon.friend = nattamon
-                
-            messages = [messageAphirat, messageNattiya, messageChanantapol, messageNattamon]
+            
+            do {
+                try context.save()
+            } catch {
+                print(error)
+            }
+        }
+        loadData()
+    }
+    
+    func loadData(){
+        let delegate = UIApplication.shared.delegate as? AppDelegate
+        if let context = delegate?.persistentContainer.viewContext {
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Message")
+            
+            do {
+                messages = try context.fetch(fetchRequest) as? [Message]
+            } catch {
+                print(error)
+            }
         }
     }
+    
 }

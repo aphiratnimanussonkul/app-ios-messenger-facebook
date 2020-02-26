@@ -19,8 +19,9 @@ class TabBarController: UITabBarController {
         recentMessageNavigationControlller.tabBarItem.image = UIImage(named: "recent")
         
         let callsController = createDummyNavigationControllerWithTitle(title: "Calls", imageName: "calls")
+        let groupController = createDummyNavigationControllerWithTitle(title: "Groups", imageName: "group")
         
-        viewControllers = [recentMessageNavigationControlller, callsController]
+        viewControllers = [recentMessageNavigationControlller, callsController, groupController]
     }
     
     private func createDummyNavigationControllerWithTitle(title: String, imageName: String) -> UINavigationController {

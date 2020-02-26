@@ -18,12 +18,18 @@ class TabBarController: UITabBarController {
         recentMessageNavigationControlller.tabBarItem.title = "Recent"
         recentMessageNavigationControlller.tabBarItem.image = UIImage(named: "recent")
         
+        let callsController = createDummyNavigationControllerWithTitle(title: "Calls", imageName: "calls")
+        
+        viewControllers = [recentMessageNavigationControlller, callsController]
+    }
+    
+    private func createDummyNavigationControllerWithTitle(title: String, imageName: String) -> UINavigationController {
         let viewController = UIViewController()
         let navController = UINavigationController(rootViewController: viewController)
-        navController.tabBarItem.title = "Calls"
-        navController.tabBarItem.image = UIImage(named: "calls")
+        navController.tabBarItem.title = title
+        navController.tabBarItem.image = UIImage(named: imageName)
         
-        viewControllers = [recentMessageNavigationControlller, navController]
+        return navController
     }
 
 }

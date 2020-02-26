@@ -16,8 +16,14 @@ class TabBarController: UITabBarController {
         let friendController = FriendsController(collectionViewLayout: layout)
         let recentMessageNavigationControlller = UINavigationController(rootViewController: friendController)
         recentMessageNavigationControlller.tabBarItem.title = "Recent"
+        recentMessageNavigationControlller.tabBarItem.image = UIImage(named: "recent")
         
-        viewControllers = [recentMessageNavigationControlller]
+        let viewController = UIViewController()
+        let navController = UINavigationController(rootViewController: viewController)
+        navController.tabBarItem.title = "Calls"
+        navController.tabBarItem.image = UIImage(named: "calls")
+        
+        viewControllers = [recentMessageNavigationControlller, navController]
     }
 
 }

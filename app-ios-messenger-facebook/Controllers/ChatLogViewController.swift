@@ -52,7 +52,6 @@ class ChatLogMessageCell: BaseCell {
     
     override func setupView() {
         super.setupView()
-        backgroundColor = UIColor.blue
         
         addSubview(messageTextView)
         

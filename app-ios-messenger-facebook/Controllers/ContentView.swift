@@ -178,8 +178,6 @@ class BaseCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implement")
     }
     
-    func setupView() {
-        backgroundColor = UIColor.blue
-    }
+    func setupView() {}
     
 }

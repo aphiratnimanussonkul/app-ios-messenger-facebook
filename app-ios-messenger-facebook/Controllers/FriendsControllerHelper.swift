@@ -20,13 +20,13 @@ extension FriendsController {
             nattiya.name = "Nattiya Nimanussonkul"
             nattiya.profileImageName = "nattiya_profile"
             
-            createMessageWithText(text: "hey how r u today", minuteAgo: 1, friend: nattiya, context: context)
+            createMessageWithText(text: "hey how r u today", minuteAgo: 24 * 60 * 9, friend: nattiya, context: context)
             
             let chanantapol = NSEntityDescription.insertNewObject(forEntityName: "Friend", into: context) as! Friend
             chanantapol.name = "Chanantapol Nimanussonkul"
             chanantapol.profileImageName = "chanantapol_profile"
             
-            createMessageWithText(text: "I'm on my way", minuteAgo: 2, friend: chanantapol, context: context)
+            createMessageWithText(text: "I'm on my way", minuteAgo: 24 * 60, friend: chanantapol, context: context)
             
             let nattamon = NSEntityDescription.insertNewObject(forEntityName: "Friend", into: context) as! Friend
             nattamon.name = "Nattamon KlongDee"

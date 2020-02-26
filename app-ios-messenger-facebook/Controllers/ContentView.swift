@@ -69,6 +69,16 @@ class MessageCell: BaseCell {
             if let dateMessage = message?.date {
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "h:mm a"
+                
+                let elapedTimeInSecond = NSDate().timeIntervalSince(dateMessage)
+                let secondInDay: TimeInterval = 60 * 60 * 24
+                
+                if elapedTimeInSecond > 7 * secondInDay {
+                    dateFormatter.dateFormat = "dd/MM/yy"
+                } else if elapedTimeInSecond > secondInDay {
+                    dateFormatter.dateFormat = "EEE"
+                }
+                
                 timeLabel.text = dateFormatter.string(from: dateMessage as Date)
             }
         }

@@ -8,6 +8,16 @@
 
 import UIKit
 
-class TabBarController: Tab {
+class TabBarController: UITabBarController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let layout = UICollectionViewFlowLayout()
+        let friendController = FriendsController(collectionViewLayout: layout)
+        let recentMessageNavigationControlller = UINavigationController(rootViewController: friendController)
+        recentMessageNavigationControlller.tabBarItem.title = "Recent"
+        
+        viewControllers = [recentMessageNavigationControlller]
+    }
 
 }

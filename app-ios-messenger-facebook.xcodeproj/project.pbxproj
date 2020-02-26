@@ -22,6 +22,7 @@
 		6B06F92223F1B2DC00F5B17E /* Friend+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B06F91E23F1B2DC00F5B17E /* Friend+CoreDataClass.swift */; };
 		6B06F92323F1B2DC00F5B17E /* Friend+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B06F91F23F1B2DC00F5B17E /* Friend+CoreDataProperties.swift */; };
 		6B502D6A24062C3B00D96A0C /* ChatLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B502D6924062C3B00D96A0C /* ChatLogViewController.swift */; };
+		6B502D6C24064F6200D96A0C /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B502D6B24064F6200D96A0C /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		6B06F91E23F1B2DC00F5B17E /* Friend+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Friend+CoreDataClass.swift"; sourceTree = "<group>"; };
 		6B06F91F23F1B2DC00F5B17E /* Friend+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Friend+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		6B502D6924062C3B00D96A0C /* ChatLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogViewController.swift; sourceTree = "<group>"; };
+		6B502D6B24064F6200D96A0C /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 				6B06F87C23ED95FB00F5B17E /* ContentView.swift */,
 				6B06F8A823F160C300F5B17E /* FriendsControllerHelper.swift */,
 				6B502D6924062C3B00D96A0C /* ChatLogViewController.swift */,
+				6B502D6B24064F6200D96A0C /* TabBarController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 			files = (
 				6B06F87923ED95FB00F5B17E /* AppDelegate.swift in Sources */,
 				6B06F92223F1B2DC00F5B17E /* Friend+CoreDataClass.swift in Sources */,
+				6B502D6C24064F6200D96A0C /* TabBarController.swift in Sources */,
 				6B06F92323F1B2DC00F5B17E /* Friend+CoreDataProperties.swift in Sources */,
 				6B06F8D923F1A0E500F5B17E /* messageModel.xcdatamodeld in Sources */,
 				6B06F87B23ED95FB00F5B17E /* SceneDelegate.swift in Sources */,

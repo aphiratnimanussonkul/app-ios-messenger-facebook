@@ -5,7 +5,7 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
 
     var friend: Friend? {
         didSet {
-            
+            navigationItem.title = friend?.name
         }
     }
     

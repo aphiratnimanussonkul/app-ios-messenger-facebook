@@ -21,8 +21,9 @@ class TabBarController: UITabBarController {
         let callsController = createDummyNavigationControllerWithTitle(title: "Calls", imageName: "calls")
         let groupController = createDummyNavigationControllerWithTitle(title: "Groups", imageName: "group")
         let peopleController = createDummyNavigationControllerWithTitle(title: "People", imageName: "people")
+        let setttingControoller = createDummyNavigationControllerWithTitle(title: "Setting", imageName: "setting")
         
-        viewControllers = [recentMessageNavigationControlller, callsController, groupController, peopleController]
+        viewControllers = [recentMessageNavigationControlller, callsController, groupController, peopleController, setttingControoller]
     }
     
     private func createDummyNavigationControllerWithTitle(title: String, imageName: String) -> UINavigationController {

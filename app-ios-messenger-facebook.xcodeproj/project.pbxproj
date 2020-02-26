@@ -22,7 +22,7 @@
 		6B06F92323F1B2DC00F5B17E /* Friend+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B06F91F23F1B2DC00F5B17E /* Friend+CoreDataProperties.swift */; };
 		6B502D6A24062C3B00D96A0C /* ChatLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B502D6924062C3B00D96A0C /* ChatLogViewController.swift */; };
 		6B502D6C24064F6200D96A0C /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B502D6B24064F6200D96A0C /* TabBarController.swift */; };
-		6B502D722406657500D96A0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B502D712406657500D96A0C /* Assets.xcassets */; };
+		6B502D752406672800D96A0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B502D742406672800D96A0C /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,8 +64,7 @@
 		6B06F91F23F1B2DC00F5B17E /* Friend+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Friend+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		6B502D6924062C3B00D96A0C /* ChatLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogViewController.swift; sourceTree = "<group>"; };
 		6B502D6B24064F6200D96A0C /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		6B502D712406657500D96A0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
-		6B502D732406657800D96A0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6B502D742406672800D96A0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,13 +115,12 @@
 		6B06F87723ED95FB00F5B17E /* app-ios-messenger-facebook */ = {
 			isa = PBXGroup;
 			children = (
-				6B502D712406657500D96A0C /* Assets.xcassets */,
+				6B502D742406672800D96A0C /* Assets.xcassets */,
 				6B06F87823ED95FB00F5B17E /* AppDelegate.swift */,
 				6B06F87A23ED95FB00F5B17E /* SceneDelegate.swift */,
 				6B06F92523F24B3100F5B17E /* Controllers */,
 				6B06F92423F24AF200F5B17E /* Models */,
 				6B06F88323ED95FC00F5B17E /* LaunchScreen.storyboard */,
-				6B502D732406657800D96A0C /* Assets.xcassets */,
 				6B06F88623ED95FC00F5B17E /* Info.plist */,
 				6B06F88023ED95FC00F5B17E /* Preview Content */,
 			);
@@ -283,7 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B06F88523ED95FC00F5B17E /* LaunchScreen.storyboard in Resources */,
-				6B502D722406657500D96A0C /* Assets.xcassets in Resources */,
+				6B502D752406672800D96A0C /* Assets.xcassets in Resources */,
 				6B06F88223ED95FC00F5B17E /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

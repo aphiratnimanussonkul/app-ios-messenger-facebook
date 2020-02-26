@@ -62,6 +62,8 @@ extension FriendsController {
         if let context = delegate?.persistentContainer.viewContext {
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Message")
             
+            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
+            
             do {
                 messages = try context.fetch(fetchRequest) as? [Message]
             } catch {

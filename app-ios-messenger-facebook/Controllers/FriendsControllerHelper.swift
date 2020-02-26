@@ -32,8 +32,8 @@ extension FriendsController {
             nattamon.name = "Nattamon KlongDee"
             nattamon.profileImageName = "nattamon_profile"
             
-            createMessageWithText(text: "Good morning son", minuteAgo: 2, friend: nattamon, context: context)
             createMessageWithText(text: "How r u?", minuteAgo: 3, friend: nattamon, context: context)
+            createMessageWithText(text: "Good morning son", minuteAgo: 2, friend: nattamon, context: context)
             
             do {
                 try context.save()

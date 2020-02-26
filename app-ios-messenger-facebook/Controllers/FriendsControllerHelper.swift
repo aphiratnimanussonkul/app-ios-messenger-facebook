@@ -61,18 +61,24 @@ extension FriendsController {
         let delegate = UIApplication.shared.delegate as? AppDelegate
         if let context = delegate?.persistentContainer.viewContext {
             
-            let friends = fetchFriend()
-            for friend in friends! {
-                print(friend.name)
-            }
-            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Message")
-            
-            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
-            
-            do {
-                messages = try context.fetch(fetchRequest) as? [Message]
-            } catch {
-                print(error)
+            if let friends = fetchFriend() {
+                
+                messages = [Message]()
+                
+                for friend in friends {
+                    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Message")
+                    
+                    fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
+                    fetchRequest.fetchLimit = 1
+                    fetchRequest.predicate = NSPredicate(format: "friend.name = %@", friend.name!)
+                    
+                    do {
+                        let fetchMessages = try context.fetch(fetchRequest) as? [Message]
+                        messages?.append(contentsOf: fetchMessages!)
+                    } catch {
+                        print(error)
+                    }
+                }
             }
         }
     }

@@ -60,6 +60,11 @@ extension FriendsController {
     func loadData(){
         let delegate = UIApplication.shared.delegate as? AppDelegate
         if let context = delegate?.persistentContainer.viewContext {
+            
+            let friends = fetchFriend()
+            for friend in friends! {
+                print(friend.name)
+            }
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Message")
             
             fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
@@ -70,6 +75,19 @@ extension FriendsController {
                 print(error)
             }
         }
+    }
+    
+    func fetchFriend() -> [Friend]? {
+        let delegate = UIApplication.shared.delegate as? AppDelegate
+        if let context = delegate?.persistentContainer.viewContext {
+            let fetchFriendRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Friend")
+            do {
+                return try context.fetch(fetchFriendRequest) as? [Friend]
+            } catch {
+                print(error)
+            }
+        }
+        return nil
     }
     
     func clearData() {

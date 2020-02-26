@@ -52,6 +52,9 @@ class MessageCell: BaseCell {
     override var isHighlighted: Bool {
         didSet {
             backgroundColor = isHighlighted ? UIColor(displayP3Red: 0, green: 134/255, blue: 249/255, alpha: 1) : UIColor.white
+            nameLabel.textColor = isHighlighted ? UIColor.white : UIColor.black
+            messageLabel.textColor = isHighlighted ? UIColor.white : UIColor.gray
+            timeLabel.textColor = isHighlighted ? UIColor.white : UIColor.gray
         }
     }
     

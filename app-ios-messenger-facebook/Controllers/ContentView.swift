@@ -124,7 +124,7 @@ class MessageCell: BaseCell {
     let timeLabel: UILabel = {
         let timeLabel = UILabel()
         timeLabel.text = "12.00 pm"
-        timeLabel.font = UIFont.systemFont(ofSize: 15)
+        timeLabel.font = UIFont.systemFont(ofSize: 13)
         timeLabel.textColor = UIColor.gray
         timeLabel.textAlignment = .right
         return timeLabel
@@ -133,7 +133,7 @@ class MessageCell: BaseCell {
     let hasReadImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
-        imageView.layer.cornerRadius = 10
+        imageView.layer.cornerRadius = 12
         imageView.layer.masksToBounds = true
         return imageView
     }()
@@ -167,11 +167,11 @@ class MessageCell: BaseCell {
         containerView.addSubview(timeLabel)
         containerView.addSubview(hasReadImageView)
         
-        containerView.addConstraintWithFormat(format: "H:|[v0][v1(80)]-12-|", views: nameLabel, timeLabel)
+        containerView.addConstraintWithFormat(format: "H:|[v0]|", views: nameLabel)
         containerView.addConstraintWithFormat(format: "V:|[v0][v1(24)]|", views: nameLabel, messageLabel)
-        containerView.addConstraintWithFormat(format: "H:|[v0]-8-[v1(20)]-12-|", views: messageLabel, hasReadImageView)
-        containerView.addConstraintWithFormat(format: "V:|[v0(20)]", views: timeLabel)
-        containerView.addConstraintWithFormat(format: "V:[v0(20)]|", views: hasReadImageView)
+        containerView.addConstraintWithFormat(format: "H:|[v0]-8-[v1(100)]-8-[v2(24)]-12-|", views: messageLabel, timeLabel, hasReadImageView)
+        containerView.addConstraintWithFormat(format: "V:[v0(24)]|", views: timeLabel)
+        containerView.addConstraintWithFormat(format: "V:[v0(24)]|", views: hasReadImageView)
         
     }
     

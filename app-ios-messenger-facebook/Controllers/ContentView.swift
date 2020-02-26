@@ -72,19 +72,18 @@ class MessageCell: BaseCell {
                 
                 let elapedTimeInSecond = NSDate().timeIntervalSince(dateMessage)
                 let secondInDay: TimeInterval = 60 * 60 * 24
-                print(elapedTimeInSecond)
                 if elapedTimeInSecond > 7 * secondInDay {
                     dateFormatter.dateFormat = "dd/MM/yy"
                     timeLabel.text = dateFormatter.string(from: dateMessage as Date)
                 } else if elapedTimeInSecond > secondInDay {
                     dateFormatter.dateFormat = "EEE"
                     timeLabel.text = dateFormatter.string(from: dateMessage as Date)
-                } else if elapedTimeInSecond / 60 < 60 {
-                    timeLabel.text = "\(Int(elapedTimeInSecond / 60)) minute ago"
                 } else if elapedTimeInSecond / 60 > 60 {
                     timeLabel.text = "\(Int(elapedTimeInSecond / (60 * 60))) hour ago"
+                } else if elapedTimeInSecond / 60 < 60 && elapedTimeInSecond / 60 > 1{
+                    timeLabel.text = "\(Int(elapedTimeInSecond / 60)) min ago"
                 } else {
-                    timeLabel.text = dateFormatter.string(from: dateMessage as Date)
+                    timeLabel.text = "\(Int(elapedTimeInSecond)) sec ago"
                 }
                 
                 

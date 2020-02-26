@@ -10,6 +10,12 @@ extension FriendsController {
         let delegate = UIApplication.shared.delegate as? AppDelegate
         if let context = delegate?.persistentContainer.viewContext {
             
+            let sirirak = NSEntityDescription.insertNewObject(forEntityName: "Friend", into: context) as! Friend
+            sirirak.name = "Nut Sirirak"
+            sirirak.profileImageName = "sirirak_profile"
+            
+            createMessageWithText(text: "Wake up!", minuteAgo: 0.5, friend: sirirak, context: context)
+            
             let aphirat = NSEntityDescription.insertNewObject(forEntityName: "Friend", into: context) as! Friend
             aphirat.name = "Aphirat Nimanussonkul"
             aphirat.profileImageName = "aphirat_profile"

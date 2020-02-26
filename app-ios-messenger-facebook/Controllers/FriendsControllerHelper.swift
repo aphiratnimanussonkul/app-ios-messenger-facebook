@@ -79,6 +79,8 @@ extension FriendsController {
                         print(error)
                     }
                 }
+                
+                messages = messages?.sorted{$0.date!.compare($1.date!) == .orderedDescending}
             }
         }
     }

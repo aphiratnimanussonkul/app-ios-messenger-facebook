@@ -36,6 +36,9 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if let messageText = messages![indexPath.item].text {
+            return CGSize(width: view.frame.width, height: messageText.height(withConstrainedWidth: view.frame.width, font: UIFont.systemFont(ofSize: 20)) + 32)
+        }
         return CGSize(width: view.frame.width, height: 100)
     }
     
@@ -71,5 +74,20 @@ class ChatLogMessageCell: BaseCell {
         addConstraintWithFormat(format: "V:|-20-[v0]|", views: messageTextView)
     
         addConstraintWithFormat(format: "V:[v0(32)]|", views: profileImage)
+    }
+}
+
+extension String {
+    func height(withConstrainedWidth width: CGFloat, font: UIFont) -> CGFloat {
+        let constraintReact = CGSize(width: width, height: .greatestFiniteMagnitude)
+        let boundingBox = self.boundingRect(with: constraintReact, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
+        return ceil(boundingBox.height)
+    }
+    
+    func width(withConstrainedHeight height: CGFloat, font: UIFont) -> CGFloat {
+        let constraintReact = CGSize(width: .greatestFiniteMagnitude, height: height)
+        let boundingBox = self.boundingRect(with: constraintReact, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
+        return ceil(boundingBox.width)
+        
     }
 }

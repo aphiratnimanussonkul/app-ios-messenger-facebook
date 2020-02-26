@@ -14,7 +14,7 @@ extension FriendsController {
             sirirak.name = "Nut Sirirak"
             sirirak.profileImageName = "sirirak_profile"
             
-            createMessageWithText(text: "Wake up!", minuteAgo: 0.5, friend: sirirak, context: context)
+            createMessageWithText(text: "Wake up! I have some news to tell you! The politician who exposed funding of alleged secret military cyber operations against peace activists in the South says he's still waiting for a clear answer from the prime minister.", minuteAgo: 0.5, friend: sirirak, context: context)
             
             let aphirat = NSEntityDescription.insertNewObject(forEntityName: "Friend", into: context) as! Friend
             aphirat.name = "Aphirat Nimanussonkul"

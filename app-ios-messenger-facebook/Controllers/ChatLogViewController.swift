@@ -39,8 +39,20 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
 
 class ChatLogMessageCell: BaseCell {
     
+    let messageTextView: UITextView = {
+        let textView = UITextView()
+        textView.text = "test message"
+        textView.font = UIFont.systemFont(ofSize: 16)
+        return textView
+    }()
+    
     override func setupView() {
         super.setupView()
         backgroundColor = UIColor.blue
+        
+        addSubview(messageTextView)
+        
+        addConstraintWithFormat(format: "H:|[v0]|", views: messageTextView)
+        addConstraintWithFormat(format: "V:|[v0]|", views: messageTextView)
     }
 }
